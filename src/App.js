@@ -16,7 +16,8 @@ export default class App extends Component {
       <div className="App">
         <div
           onClick={() => this.setState({ spin: !this.state.spin })}
-          className={`${this.state.spin ? "spin" : null} thing-1`} />
+          className={`${this.state.spin ? "spin" : null} thing-1`}
+        />
       </div>
     )
   }
