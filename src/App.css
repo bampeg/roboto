@@ -1,14 +1,13 @@
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
 }
-
 .App {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
 /***************************************************************************** 
 animation-delay	          Specifies a delay for the start of an animation
 animation-direction	      Specifies whether an animation should be played forwards, backwards or in alternate cycles
@@ -19,41 +18,52 @@ animation-name	          Specifies the name of the @keyframes animation
 animation-play-state	    Specifies whether the animation is running or paused
 animation-timing-function	Specifies the speed curve of the animation 
 *****************************************************************************/
-
-
+h2 {
+  cursor: pointer;
+}
+.name {
+  height: 0px;
+  text-overflow: clip;
+  overflow: hidden;
+}
 @keyframes head-spin {
   from { 
     transform: rotateY(0deg); 
     /* border-radius: 0; */
   }
-  /* 25% {
+  25% {
     border-radius: 50%;
   }
   50% {
     border-radius: 50px;
-  } */
+  }
   to { 
     transform: rotateY(180deg); 
     /* border-radius: 25px; */
   }
 }
-
 .spin {
-  animation: head-spin /*linear*/ 4s; 
+  animation: head-spin linear 2s; 
   transform: rotateX(180deg);
 }
-
 .head {
-  margin-top: 5%;
-  display: flex;
-  justify-content: space-evenly;
+  /* display: flex;
+  justify-content: space-evenly; */
   height: 200px;
   width: 200px;
-  background: slategray;
-  border-radius: 10px;
   cursor: pointer;
+  position: relative;
 }
-
+.cube-face {
+  width: inherit;
+  height: inherit;
+  position: absolute;
+  background: slategray;
+  opacity: 0.5;
+}
+.front {
+  transform: translate3d(0, 0, 20px);
+}
 .eye {
   justify-content: space-around;
   align-self: center;
@@ -62,23 +72,33 @@ animation-timing-function	Specifies the speed curve of the animation
   height: 25px;
   width: 25px;
 }
-
 .chest {
   margin-top: 10px;
-  height: 300px;
-  width: 400px;
+  height: 250px;
+  width: 350px;
   background: slategray;
   border-radius: 5px;
 }
-
 .legs-container {
   display: flex;
 }
-
 .leg {
-  height: 300px;
+  height: 200px;
   width: 100px;
   background: slategray;
   margin: 10px;
   border-radius: 5px;
 }
+.mustache {
+  height: 180px;
+  width: 180px;
+  border-radius: 50%;
+  position: absolute;
+  color: blue;
+  box-shadow: 
+    150px 240px 0 0 currentColor,
+    300px 240px 0 0 currentColor;
+}
+/* .mustache::before {
+  content:
+} */
